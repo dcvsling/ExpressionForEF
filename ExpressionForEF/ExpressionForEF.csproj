@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
+    <DefineConstants Condition="$(TargetFramework)=='net45'">$(DefaultConstants);NET</DefineConstants>
+    <DefineConstants Condition="$(TargetFramework)=='netstandard2.0'">$(DefaultConstants);NETSTANDARD</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="$(TargetFramework)=='net45'">
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup Condition="$(TargetFramework)=='netstandard2.0'">
+    
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
+  </ItemGroup>
+
+</Project>

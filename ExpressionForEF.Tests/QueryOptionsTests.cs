@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using Microsoft.EntityFrameworkCore.Storage;
-using Newtonsoft.Json;
 using System;
 using System.Linq;
 using System.Reflection;
@@ -26,7 +25,6 @@ namespace ExpressionForEF.Tests
             var context = new TestDbContext();
 
             var queryvalues = TestData.QueryValues;
-            var str = JsonConvert.SerializeObject(queryvalues);
             var options = OptionsHelper.CreateOptions<TestMaster>(queryvalues);
 
             var query = context.TestMasters.ConfigureQuery(options).ToSql();
